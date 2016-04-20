@@ -33,7 +33,7 @@ def pay(user_id):
     data = request.get_json()
     result, data = validators.validate_payment(user_id, data)
     if (result == 'ok'):
-        return Response(response=data, content_type='plain/text', status='200')
+        return Response(response=str(data), content_type='plain/text', status='200')
     else:
         return Response(response=data, content_type='plain/text', status='400')
 
@@ -43,7 +43,7 @@ def bill(user_id):
     data = request.get_json()
     result, data = validators.validate_bill(user_id, data)
     if (result == 'ok'):
-        return Response(response=data, content_type='plain/text', status='200')
+        return Response(response=str(data), content_type='plain/text', status='200')
     else:
         return Response(response=data,content_type='plain/text', status='400')
 
