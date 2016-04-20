@@ -27,11 +27,13 @@ def read_user(user_id):
 
 def bill(user_id):
     r = requests.post(base_url + '/users/' + str(user_id) + '/bill', headers=headers, data='{"months":2}')
-    return r.json()
+    print(r.text)
+    return r.text
 
 def pay(user_id):
     r = requests.post(base_url + '/users/' + str(user_id) + '/payment', headers=headers, data='{"months":1}')
-    return r.json()
+    print(r.text)
+    return r.text
                      
     
 if __name__ == "__main__" :
